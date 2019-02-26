@@ -1,0 +1,33 @@
+Deep Learning Project: Pet Classifier using CNN
+Data Set
+
+This is a small program with 25k images of cats and dogs.
+The evaluation set has 12.5k images of cats and dogs
+Runs
+
+The student is expected to run the 500 training step
+
+Creating Tarining image into array
+Now, we can build another function to fully process the training images and their labels into arrays: 
+The tqdm module is a really nice, pretty, way to measure where you are in a process, rather than 
+printing things out at intervals...etc, it gives a progress bar. Super neat.
+
+Anyway, the above function converts the data for us into array data of the image and its label.
+
+When we've gone through all of the images, we shuffle them, then save. Shuffle modifies a variable 
+in place, so there's no need to re-define it here.
+
+With this function, we will both save, and return the array data. This way, if we just change 
+the neural network's structure, and not something with the images, like image size..etc..
+then we can just load the array file and save some processing time. While we're here, 
+we might as well also make a function to process the testing data. 
+This is the actual competition test data, NOT the data that we'll use to check the accuracy of our 
+algorithm as we test. This data has no label.
+Creating CNN Model
+
+What we have here is a nice, 2 layered convolutional neural network, with a fully connected layer, 
+and then the output layer. It's been debated whether or not a fully connected layer is of any use. 
+I'll leave it in anyway.
+
+This exact convnet was good enough for recognizing hand 28x28 written digits. 
+Let's see how it does with cats and dogs at 50x50 resolution
